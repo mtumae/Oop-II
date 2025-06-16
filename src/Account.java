@@ -37,27 +37,13 @@ class Admin extends Account{
     }
 
 
-
-     class MainApplication {
-        public static void main(String[] args) {
-            Admin curAdmin = new Admin(1234, "Mtume", "mtume12345");
-            User curUser = new User(4455, "John");
-            curAdmin.performOperation(new Update()); // Admin Updates the data.
-            curUser.performOperation(new View()); // User can view the data.
-
-        }
-
-    }
-
-
      class Update implements DataSource{
         @Override
         public void execute() {
-            System.out.println("Data has been Updated Successfuly!");
+            System.out.println("Data has been Updated Successfully!");
         }
 
     }
-
 
      class User extends Account {
         public User(int _id, String _name){
@@ -66,12 +52,23 @@ class Admin extends Account{
         }
     }
 
-
      class View implements DataSource {
         @Override
         public void execute() {
             System.out.println("Some data to be displayed.");
         }
     }
+
+class MainApplication {
+    public static void main(String[] args) {
+        Admin curAdmin = new Admin(1234, "Mtume", "mtume12345");
+        User curUser = new User(4455, "John");
+        curAdmin.performOperation(new Update()); // Admin Updates the data.
+        curUser.performOperation(new View());// User can view the data.
+
+    }
+
+}
+
 
 
