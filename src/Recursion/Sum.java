@@ -1,4 +1,4 @@
-package recursion;
+package Recursion;
 
 public class Sum{
     public static int sum(int n) {
